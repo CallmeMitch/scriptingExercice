@@ -12,20 +12,20 @@ bool=true
 
 listeFichiersDuRepCourant() {
     echo "Voici les fichiers du répertoire courant."
-    ls $POSITION
+    ls "$POSITION"
 }
 
 makeNewFile(){
     echo "Quel est le nom du fichier?"
     read nom
-    touch $nom
+    touch "$nom"
 }
 
 removeFile(){
     echo "Nom du fichier: "
-    read fileName
+    read -r fileName
     if [ -e "$fileName" ]; then
-        rm $fileName
+        rm "$fileName"
     else
         echo "Le fichier n'existe pas."
     fi
@@ -34,7 +34,7 @@ removeFile(){
 readFileContent(){
     read -p "Nom du fichier: " fileNameToRead
     if [ -e "$fileNameToRead" ]; then
-        less $fileNameToRead
+        less "$fileNameToRead"
     else
         echo "Aucun fichier n'existe."
     fi
