@@ -18,7 +18,20 @@ listeFichiersDuRepCourant() {
 makeNewFile(){
     echo "Quel est le nom du fichier?"
     read -r nom
-    touch "$nom"
+
+    # Vérifier que le nom n'est pas vide
+    if [[ -z "$nom" ]]; then
+        echo "Le nom du fichier ne peut pas être vide."
+        return
+    fi
+
+    # Vérifier que le fichier n'existe pas déjà
+    if [ -e "$nom" ]; then
+        echo "Le fichier '$nom' existe déjà."
+        return
+    fi
+
+    touch "$nom" && echo "Fichier '$nom' créé avec succès." || echo "Échec de la création du fichier"
 }
 
 removeFile(){
