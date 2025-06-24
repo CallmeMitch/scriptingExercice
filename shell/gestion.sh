@@ -17,7 +17,7 @@ listeFichiersDuRepCourant() {
 
 makeNewFile(){
     echo "Quel est le nom du fichier?"
-    read nom
+    read -r nom
     touch "$nom"
 }
 
@@ -32,7 +32,7 @@ removeFile(){
 }
 
 readFileContent(){
-    read -p "Nom du fichier: " fileNameToRead
+    read -rp "Nom du fichier: " fileNameToRead
     if [ -e "$fileNameToRead" ]; then
         less "$fileNameToRead"
     else
@@ -44,18 +44,18 @@ quitScript(){
     bool=false
 }
 
-iterrationFunction(){
+iterationFunction(){
     ITERATION=$((ITERATION + 1))
-    echo "Itération n°"$ITERATION
+    echo "Itération n°$ITERATION"
     echo ""
-    echo -e "A l'itération n°$ITERATION, l'option $OPTIONS a été choisi." >> log.txt
+    echo -e "À l'itération n°$ITERATION, l'option $OPTIONS a été choisie." >> log.txt
 }
 
 functionCaller(){
-    case $options in
-        1) listeFichiersDuRepCourant; iterrationFunction ;;
-        2) makeNewFile; iterrationFunction ;;
-        3) removeFile; iterrationFunction ;;
+    case $OPTIONS in
+        1) listeFichiersDuRepCourant; iterationFunction ;;
+        2) makeNewFile; iterationFunction ;;
+        3) removeFile; iterationFunction ;;
         4) readFileContent ;;
         5) quitScript ;;
         *) echo "Veuillez sélectionner un chiffre entre 1 et 5." ;;
@@ -64,7 +64,7 @@ functionCaller(){
 
 ## Les options. 
 
-if [ "$1" = "--help" -o "$1" = "" ]; then
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
     echo "Usage : $0 [OPTIONS]"
     echo ""
     echo "Options disponibles :"
@@ -74,30 +74,24 @@ if [ "$1" = "--help" -o "$1" = "" ]; then
     exit 0
 fi
 
-
-if [ "$1" = "-v" -o "$1" = "--version" ]; then
-    echo $VERSION
+if [ "$1" = "-v" ] || [ "$1" = "--version" ]; then
+    echo "$VERSION"
+    exit 0
 fi
 
-if [ "$1" = "-i" -o "$1" = "--interactive-mode" ]; then
+if [ "$1" = "-i" ] || [ "$1" = "--interactive-mode" ]; then
     while [ "$bool" = true ]; do
-        
-        echo "1.  Liste les fichiers du repertoire courant."
+        echo "1.  Lister les fichiers du répertoire courant."
         echo "2.  Créer un nouveau fichier."
-        echo "3.  Suppression de fichier."
-        echo "4.  Lire le contenue d'un fichier."
+        echo "3.  Supprimer un fichier."
+        echo "4.  Lire le contenu d'un fichier."
         echo "5.  Quitter le script."
 
-        read -p "Veuillez rentrer un numéro entre 1 et 5: " options
-        OPTIONS=$options
+        read -rp "Veuillez rentrer un numéro entre 1 et 5: " OPTIONS
         echo ""
-        echo ""
-
         functionCaller
-
         echo ""
         echo " --- FIN --- " 
         echo ""
-
     done
 fi
