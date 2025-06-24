@@ -1,0 +1,61 @@
+Étapes de l'atelier
+
+Étape 1 — Chargement des données
+
+    Ouvrez PowerShell Core (pwsh) et placez-vous dans le dossier contenant le fichier employes.csv
+
+    Chargez le contenu du fichier dans une variable nommée $donnees
+
+    Affichez les 2 premiers éléments pour vérifier que le chargement a fonctionné
+
+
+Étape 2 — Exploration et accès aux attributs
+
+    Affichez uniquement les noms des employés
+
+    Calculez l’âge moyen de l’ensemble des employés
+
+    Affichez tous les employés du service Informatique
+
+
+Étape 3 — Utilisation de conditions
+
+    Affichez les employés de plus de 40 ans
+
+    Pour chaque employé, affichez une évaluation :
+
+        "Jeune" si âge < 35
+
+        "Expérimenté" si âge entre 35 et 49
+
+        "Senior" si âge >= 50
+
+
+Étape 4 — Boucles
+
+    Parcourez tous les employés avec une boucle foreach et affichez :
+    "<Nom> travaille dans le service <Service> avec un salaire de <Salaire> €"
+
+    Utilisez une boucle for pour parcourir les 3 premiers employés et afficher leurs noms
+
+
+Étape 5 — Switch
+
+    Utilisez une structure switch sur le champ Service pour afficher :
+
+    "Technique" pour Informatique
+
+    "Support" pour RH et Comptabilité
+
+    "Client" pour Marketing
+
+    "Autre" sinon
+
+
+Étape 6 — Rapport final
+
+    Affichez le nombre total d’employés
+
+    Calculez et affichez le salaire moyen
+
+    Affichez le nom de l’employé ayant le plus haut salaire
