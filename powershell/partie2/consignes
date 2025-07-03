@@ -1,0 +1,68 @@
+Partie 2 : Fonctions, erreurs, paramètres et modules
+
+Étape 1 — Créer et utiliser des fonctions
+
+    Créez une fonction Afficher-Employe qui :
+
+        Prend en paramètre un employé (une ligne d’objet CSV)
+
+        Affiche son nom, son service et son salaire
+
+    Appelez la fonction pour chaque employé du fichier employes.csv (rechargé si besoin)
+
+
+Étape 2 — Ajouter des paramètres avec valeurs par défaut
+
+    Modifiez la fonction Afficher-Employe pour ajouter un paramètre facultatif :
+
+        -Prefix (chaîne), par défaut vide
+
+        Si un préfixe est fourni, l'afficher avant les informations de l’employé
+
+
+Étape 3 — Gestion des erreurs
+
+    Créez une fonction Calculer-RatioSalaire qui :
+
+        Prend en paramètres deux salaires
+
+        Retourne le ratio du premier salaire sur le second
+
+        Si le second salaire est nul, génère une erreur gérée par try/catch et affiche un message explicite
+
+    Testez la fonction avec des valeurs valides et une division par zéro
+
+
+Étape 4 — Fonction filtrant les employés
+
+    Créez une fonction Filtrer-Employes qui :
+
+        Prend en paramètre le service
+
+        Retourne tous les employés appartenant à ce service
+
+    Testez la fonction en filtrant sur "Informatique" et "Marketing", puis affichez la liste des noms
+
+
+Étape 5 — Introduction aux modules
+
+    Créez un fichier EmployeTools.psm1 dans le même répertoire
+
+        Déplacez-y la fonction Afficher-Employe et Filtrer-Employes
+
+    Dans votre script principal, importez le module EmployeTools.psm1 avec Import-Module
+
+    Utilisez ensuite vos fonctions depuis le module pour afficher les employés du service "RH" avec un préfixe personnalisé
+
+
+Étape 6 — Validation finale
+
+    Créez un script final rapport-employes.ps1 qui :
+
+    Importe le module
+
+    Charge le fichier CSV
+
+    Filtre les employés d’un service passé en argument (paramètre de script)
+
+    Affiche les informations de chaque employé filtré avec le préfixe [Employé]
