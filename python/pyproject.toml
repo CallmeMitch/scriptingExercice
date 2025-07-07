@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "valentinscriptingpython"
+version = "0.1.0"
+description = "Ce script permet d'utiliser plusieurs fonction, notamment faire la somme de plusieurs élements."
+authors = ["CallmeMitch <valentin.brison@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+click = "^8.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
