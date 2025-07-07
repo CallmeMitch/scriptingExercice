@@ -1,0 +1,33 @@
+Créez un projet Python structuré :
+
+    Un fichier principal main.py
+
+    Un dossier utils/ contenant un fichier helpers.py
+
+    Un fichier README.md
+
+Implémentez dans helpers.py :
+
+    Une fonction de formatage de texte (ex: capitalize_all) qui met en majuscules toutes les lettres d'une phrase.
+
+    Une fonction add_numbers qui prend une liste de nombres et retourne la somme.
+
+    Une fonction décorée (ex: log_execution) qui affiche un message avant et après l'appel d'une autre fonction.
+
+Dans main.py :
+
+    Importez les fonctions de helpers.py
+
+    Créez un menu interactif en utilisant argparse ou click (librairie CLI avancée), selon votre préférence.
+
+Mettez en place un environnement virtuel avec Poetry ou Pipenv
+
+    Ajoutez une dépendance externe (ex: requests ou click) même si elle n’est pas utilisée, pour s’entraîner
+
+Créez un fichier requirements.txt ou pyproject.toml selon l'outil choisi
+
+Ajoutez un fichier README.md qui explique :
+
+    Objectif de votre script
+
+    Commandes pour installer l'environnement et exécuter le script
